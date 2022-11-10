@@ -1,19 +1,27 @@
 import Link from 'next/link';
 
+import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
+
 export default function Navbar() {
   return (
-    <nav>
+    <Container>
       <Link href="/">
-        <div>
-          <h3>Prime</h3>
-          <h3>Movies</h3>
-        </div>
+        <Logo>
+          <IconTicket />
+
+          <div>
+            <h3>Prime</h3>
+            <h2>Movies</h2>
+          </div>
+        </Logo>
       </Link>
 
-      <form>
+      <SearchBar>
         <input type="text" placeholder="Busque um filme" />
-        <button type="submit">x</button>
-      </form>
-    </nav>
+        <button type="submit">
+          <IconSearch />
+        </button>
+      </SearchBar>
+    </Container>
   );
 }
