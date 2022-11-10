@@ -7,7 +7,7 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0.9375rem 5rem;
-  background-color: #060b28;
+  background-color: ${({ theme }) => theme.colors.richBlack};
 `;
 
 export const Logo = styled.div`
@@ -19,7 +19,11 @@ export const Logo = styled.div`
   div {
     text-align: center;
     color: transparent;
-    background-image: linear-gradient(90deg, #2f5aff, #89bdff);
+    background-image: linear-gradient(
+      90deg,
+      ${({ theme }) => theme.colors.ultramarineBlue},
+      ${({ theme }) => theme.colors.jordyBlue}
+    );
     -webkit-background-clip: text;
     background-clip: text;
 
@@ -35,14 +39,14 @@ export const Logo = styled.div`
 
 export const IconTicket = styled(ImTicket)`
   font-size: 2.25rem;
-  color: #2f5aff;
+  color: ${({ theme }) => theme.colors.ultramarineBlue};
 `;
 
 export const SearchBar = styled.form`
   display: flex;
   align-items: center;
   width: 25vw;
-  border: 0.125rem solid #2f5aff;
+  border: 0.125rem solid ${({ theme }) => theme.colors.ultramarineBlue};
   border-radius: 1.25rem;
   transition: 0.3s;
 
@@ -78,11 +82,12 @@ export const SearchBar = styled.form`
   }
 
   &:hover {
-    box-shadow: 0 0 0 0.1875rem #2f5aff66;
+    box-shadow: 0 0 0 0.1875rem
+      ${({ theme }) => theme.colors.ultramarineBlueOpacity70};
   }
 `;
 
 export const IconSearch = styled(ImSearch)`
   font-size: 1.125rem;
-  color: #2f5aff;
+  color: ${({ theme }) => theme.colors.ultramarineBlue};
 `;
