@@ -1,3 +1,5 @@
+import MovieCard from '../components/MovieCard';
+
 import { Container, Title, MovieList } from '../styles/home';
 
 const apiPath = process.env.NEXT_PUBLIC_API_PATH;
@@ -12,7 +14,7 @@ export default function Home({ topMoviesData }) {
 
       <MovieList>
         {topMoviesList.map(movie => (
-          <p key={movie.id}>{movie.title}</p>
+          <MovieCard movie={movie} />
         ))}
       </MovieList>
     </Container>
