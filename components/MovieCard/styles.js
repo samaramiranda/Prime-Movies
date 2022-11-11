@@ -4,13 +4,6 @@ import Image from 'next/image';
 
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.white};
-`;
-
 export const Poster = styled(Image)`
   border-radius: 1.25rem;
 `;
@@ -21,6 +14,40 @@ export const Details = styled.div`
 
   h4 {
     font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
+
+export const ExpandedDetails = styled.div`
+  display: none;
+  background-color: blue;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.white};
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover ${Poster} {
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  &:hover ${Details} {
+    display: none;
+  }
+
+  &:hover ${ExpandedDetails} {
+    display: block;
+    width: 11.8125rem;
   }
 `;
 

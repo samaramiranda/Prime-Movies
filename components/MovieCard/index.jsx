@@ -1,4 +1,11 @@
-import { Container, Poster, Details, Rating, IconRating } from './styles';
+import {
+  Container,
+  Poster,
+  Details,
+  Rating,
+  IconRating,
+  ExpandedDetails,
+} from './styles';
 
 const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
 
@@ -22,6 +29,10 @@ export default function MovieCard({ movie }) {
           <p>{movie.vote_average}</p>
         </Rating>
       </Details>
+
+      <ExpandedDetails>
+        <p>Detalhes do filme</p>
+      </ExpandedDetails>
     </Container>
   );
 }
