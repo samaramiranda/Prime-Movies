@@ -20,5 +20,5 @@ export const MovieList = styled.div`
   padding: 2.8rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11.8125rem, 1fr));
-  grid-gap: 1.5625rem;
+  grid-gap: 1.3em;
 `;
