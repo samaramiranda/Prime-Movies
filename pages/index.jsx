@@ -1,7 +1,11 @@
+import { Container, Title, MovieList } from '../styles/home';
+
 export default function Home() {
   return (
-    <div>
-      <h1>Movies</h1>
-    </div>
+    <Container>
+      <Title>Filmes Populares</Title>
+
+      <MovieList />
+    </Container>
   );
 }
