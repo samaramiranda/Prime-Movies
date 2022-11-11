@@ -19,11 +19,6 @@ export const Title = styled.h1`
 export const MovieList = styled.div`
   padding: 2.8rem 0;
   display: grid;
-<<<<<<< HEAD
-  grid-template-columns: repeat(auto-fill, minmax(11.8rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(11.8125rem, 1fr));
   grid-gap: 1.3em;
-=======
-  grid-template-columns: repeat(auto-fill, minmax(189px, 1fr));
-  grid-gap: 25px;
->>>>>>> origin/main
 `;
