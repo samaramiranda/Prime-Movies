@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import { Container } from './styles';
+import { Container, Poster, Details, Rating, IconRating } from './styles';
 
 const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
 
@@ -9,14 +7,21 @@ export default function MovieCard({ movie }) {
 
   return (
     <Container>
-      <Image
+      <Poster
         src={`${imgPath}${movie.poster_path}`}
         alt="Poster do Filme"
         width={189}
         height={284}
       />
 
-      <p>{movie.title}</p>
+      <Details>
+        <h4>{movie.title}</h4>
+
+        <Rating>
+          <IconRating />
+          <p>{movie.vote_average}</p>
+        </Rating>
+      </Details>
     </Container>
   );
 }
