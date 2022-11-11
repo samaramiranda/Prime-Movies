@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0.5rem 5rem;
+  padding: 1rem 5rem;
 `;
 
 export const Title = styled.h1`
@@ -17,6 +17,9 @@ export const Title = styled.h1`
 `;
 
 export const MovieList = styled.div`
-  padding: 2rem 0;
-  color: ${({ theme }) => theme.colors.white};
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5625rem;
+  padding: 2.8rem 0;
 `;
