@@ -12,12 +12,12 @@ export const Container = styled.div`
 `;
 
 export const Poster = styled(Image)`
-  border-radius: 20px;
+  border-radius: 1.25rem;
 `;
 
 export const Details = styled.div`
-  width: 189px;
-  margin-top: 5px;
+  width: 11.8125rem;
+  margin-top: 0.3125rem;
 
   h4 {
     font-weight: 100;
@@ -26,15 +26,15 @@ export const Details = styled.div`
 
 export const Rating = styled.div`
   display: flex;
-  gap: 4px;
-  margin-top: 3px;
+  gap: 0.25rem;
+  margin-top: 0.1875rem;
   color: ${({ theme }) => theme.colors.goldenrod};
 
   p {
-    font-size: 13.5px;
+    font-size: 0.8438rem;
   }
 `;
 
 export const IconRating = styled(ImStarFull)`
-  font-size: 13.5px;
+  font-size: 0.8438rem;
 `;
