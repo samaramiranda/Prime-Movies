@@ -17,9 +17,8 @@ export const Title = styled.h1`
 `;
 
 export const MovieList = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5625rem;
   padding: 2.8rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(187px, 1fr));
+  grid-gap: 25px;
 `;
