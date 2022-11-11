@@ -17,5 +17,6 @@ export const Title = styled.h1`
 `;
 
 export const MovieList = styled.div`
-  padding: 1rem 0;
+  padding: 2rem 0;
+  color: ${({ theme }) => theme.colors.white};
 `;
