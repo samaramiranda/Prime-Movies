@@ -9,6 +9,8 @@ const theme = {
 
     white: '#fff',
     whiteOpacity80: '#ffffff80',
+
+    goldenrod: '#d7a01d',
   },
 };
 
