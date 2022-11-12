@@ -2,11 +2,22 @@ import Image from 'next/image';
 
 import styled from 'styled-components';
 
-import { Container as Informations } from './Informations/styles';
 import { Container as MoreInformations } from './MoreInformations/styles';
 
 export const Poster = styled(Image)`
   border-radius: 1.25rem;
+`;
+
+export const Informations = styled.div`
+  width: 11.8125rem;
+  margin-top: 0.3125rem;
+
+  h4 {
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const Container = styled.div`
@@ -26,7 +37,7 @@ export const Container = styled.div`
   }
 
   &:hover ${Informations} {
-    display: none;
+    opacity: 0;
   }
 
   &:hover ${MoreInformations} {

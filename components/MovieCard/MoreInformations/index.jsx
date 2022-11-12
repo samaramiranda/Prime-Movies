@@ -1,3 +1,5 @@
+import Rating from '../Rating';
+
 import { Container, Overview, WrapperDetails } from './styles';
 
 export default function MoreInformations({ movie }) {
@@ -7,7 +9,7 @@ export default function MoreInformations({ movie }) {
       <Overview>{movie.overview}</Overview>
 
       <WrapperDetails>
-        <p>{movie.vote_average}</p>
+        <Rating movie={movie} />
         <p>{movie.release_date}</p>
       </WrapperDetails>
     </Container>

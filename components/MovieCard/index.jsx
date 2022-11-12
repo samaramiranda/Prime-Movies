@@ -1,7 +1,7 @@
-import Informations from './Informations';
+import Rating from './Rating';
 import MoreInformations from './MoreInformations';
 
-import { Container, Poster, WrapperInformations } from './styles';
+import { Container, Poster, WrapperInformations, Informations } from './styles';
 
 const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
 
@@ -18,7 +18,11 @@ export default function MovieCard({ movie }) {
       />
 
       <WrapperInformations>
-        <Informations movie={movie} />
+        <Informations>
+          <h4>{movie.title}</h4>
+          <Rating movie={movie} />
+        </Informations>
+
         <MoreInformations movie={movie} />
       </WrapperInformations>
     </Container>
