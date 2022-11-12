@@ -17,6 +17,7 @@ export const Informations = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: 0.1875rem;
   }
 `;
 
