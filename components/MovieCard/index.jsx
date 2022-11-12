@@ -1,11 +1,7 @@
-import {
-  Container,
-  Poster,
-  Details,
-  Rating,
-  IconRating,
-  ExpandedDetails,
-} from './styles';
+import Informations from './Informations';
+import MoreInformations from './MoreInformations';
+
+import { Container, Poster } from './styles';
 
 const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
 
@@ -21,18 +17,9 @@ export default function MovieCard({ movie }) {
         height={284}
       />
 
-      <Details>
-        <h4>{movie.title}</h4>
+      <Informations movie={movie} />
 
-        <Rating>
-          <IconRating />
-          <p>{movie.vote_average}</p>
-        </Rating>
-      </Details>
-
-      <ExpandedDetails>
-        <p>Detalhes do filme</p>
-      </ExpandedDetails>
+      <MoreInformations movie={movie} />
     </Container>
   );
 }
