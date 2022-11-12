@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Overview = styled.p`
   margin: 5px 0;
-  font-size: 12px;
+  font-size: 11.5px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
