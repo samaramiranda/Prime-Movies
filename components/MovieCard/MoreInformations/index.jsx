@@ -1,7 +1,7 @@
 import Rating from '../Rating';
 import formatDate from '../../../utils/formatDate';
 
-import { Container, Overview, WrapperDetails } from './styles';
+import { Container, Overview, WrapperDetails, Date } from './styles';
 
 export default function MoreInformations({ movie }) {
   return (
@@ -11,7 +11,7 @@ export default function MoreInformations({ movie }) {
 
       <WrapperDetails>
         <Rating movie={movie} />
-        <p>{formatDate(movie.release_date, 'yyyy')}</p>
+        <Date>{formatDate(movie.release_date, 'yyyy')}</Date>
       </WrapperDetails>
     </Container>
   );

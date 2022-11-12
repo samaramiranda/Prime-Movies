@@ -5,14 +5,14 @@ export const Container = styled.div`
   top: 0;
   width: 100%;
   opacity: 0;
-  padding: 5px 5px 10px 5px;
-  border-radius: 0 0 20px 20px;
+  padding: 0.5rem;
+  border-radius: 0 0 1.25rem 1.25rem;
   background-color: #1e233d;
 `;
 
 export const Overview = styled.p`
-  margin: 5px 0;
-  font-size: 11.5px;
+  margin: 0.3125rem 0 0.5rem 0;
+  font-size: 0.7188rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -22,6 +22,10 @@ export const Overview = styled.p`
 
 export const WrapperDetails = styled.div`
   display: flex;
-  align-items: center;
-  gap: 0.25rem;
+  gap: 0.7rem;
+`;
+
+export const Date = styled.p`
+  font-size: 0.8438rem;
+  font-weight: 100;
 `;
