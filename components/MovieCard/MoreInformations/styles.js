@@ -5,9 +5,9 @@ export const Container = styled.div`
   top: 0;
   width: 100%;
   opacity: 0;
-  padding: 5px;
-  background-color: green;
+  padding: 5px 5px 10px 5px;
   border-radius: 0 0 20px 20px;
+  background-color: #1e233d;
 `;
 
 export const Overview = styled.p`
