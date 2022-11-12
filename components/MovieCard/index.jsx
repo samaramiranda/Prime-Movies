@@ -1,7 +1,7 @@
 import Informations from './Informations';
 import MoreInformations from './MoreInformations';
 
-import { Container, Poster } from './styles';
+import { Container, Poster, WrapperInformations } from './styles';
 
 const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
 
@@ -17,9 +17,10 @@ export default function MovieCard({ movie }) {
         height={284}
       />
 
-      <Informations movie={movie} />
-
-      <MoreInformations movie={movie} />
+      <WrapperInformations>
+        <Informations movie={movie} />
+        <MoreInformations movie={movie} />
+      </WrapperInformations>
     </Container>
   );
 }

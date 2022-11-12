@@ -30,7 +30,11 @@ export const Container = styled.div`
   }
 
   &:hover ${MoreInformations} {
-    display: block;
-    width: 11.8125rem;
+    opacity: 1;
   }
+`;
+
+export const WrapperInformations = styled.div`
+  position: relative;
+  width: 11.8125rem;
 `;
