@@ -51,5 +51,6 @@ export async function getStaticProps({ params }) {
       topMoviesData: data,
       page: Number(page),
     },
+    revalidate: 300,
   };
 }
