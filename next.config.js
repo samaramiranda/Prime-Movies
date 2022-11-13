@@ -8,6 +8,16 @@ const nextConfig = {
   images: {
     domains: ['image.tmdb.org'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/movies/1',
+        permanent: true,
+        basePath: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
