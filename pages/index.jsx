@@ -8,7 +8,7 @@ const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiPath = process.env.NEXT_PUBLIC_API_PATH;
 
 export default function Home({ topMoviesData }) {
-  const { results: topMoviesList } = topMoviesData;
+  const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
 
   return (
     <Container>
@@ -20,7 +20,7 @@ export default function Home({ topMoviesData }) {
         ))}
       </MovieList>
 
-      <Pagination />
+      <Pagination totalPages={totalPages} />
     </Container>
   );
 }
