@@ -6,9 +6,11 @@ import { Container, Title, MovieList } from '../../styles/home';
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiPath = process.env.NEXT_PUBLIC_API_PATH;
+const apiPageLimit = 500;
 
 export default function Home({ topMoviesData, page }) {
   const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
+  const numberOfPages = totalPages > apiPageLimit ? apiPageLimit : totalPages;
 
   return (
     <Container>
@@ -20,7 +22,7 @@ export default function Home({ topMoviesData, page }) {
         ))}
       </MovieList>
 
-      <Pagination totalPages={totalPages} initialPage={page} />
+      <Pagination totalPages={numberOfPages} initialPage={page} />
     </Container>
   );
 }
