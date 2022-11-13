@@ -11,8 +11,8 @@ export const Container = styled.div`
 `;
 
 export const Overview = styled.p`
-  margin: 0.3125rem 0 0.5rem 0;
-  font-size: 0.7188rem;
+  margin: 0.5rem 0 0.6rem 0;
+  font-size: 0.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

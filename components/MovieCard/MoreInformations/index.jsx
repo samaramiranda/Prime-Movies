@@ -6,7 +6,7 @@ import { Container, Overview, WrapperDetails, Date } from './styles';
 export default function MoreInformations({ movie }) {
   return (
     <Container>
-      <h5>{movie.title}</h5>
+      <h4>{movie.title}</h4>
       <Overview>{movie.overview}</Overview>
 
       <WrapperDetails>
