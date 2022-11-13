@@ -1,14 +1,14 @@
 import MovieCard from '../../components/MovieCard';
 import Pagination from '../../components/Pagination';
 
-import { Container, Title, MovieList } from '../../styles/home';
+import { Container, Title, MovieList } from './styles';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiPath = process.env.NEXT_PUBLIC_API_PATH;
 const apiPageLimit = 500;
 
-export default function Home({ topMoviesData, page }) {
+export default function Movies({ topMoviesData, page }) {
   const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
   const numberOfPages = totalPages > apiPageLimit ? apiPageLimit : totalPages;
 
