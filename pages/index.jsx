@@ -27,9 +27,7 @@ export default function Home({ topMoviesData, page }) {
   );
 }
 
-export async function getStaticProps() {
-  // const { page } = params;
-
+export const getServerSideProps = async () => {
   const topMoviesUrl = `${apiPath}popular?api_key=${apiKey}&${apiLanguage}&page=${1}`;
 
   const res = await fetch(topMoviesUrl);
@@ -40,6 +38,5 @@ export async function getStaticProps() {
       topMoviesData: data,
       page: 1,
     },
-    revalidate: 300,
   };
-}
+};
