@@ -6,8 +6,6 @@ import { Container, Poster, WrapperInformations, Informations } from './styles';
 const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
 
 export default function MovieCard({ movie }) {
-  console.log(movie);
-
   return (
     <Container>
       <Poster
