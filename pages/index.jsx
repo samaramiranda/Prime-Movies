@@ -1,4 +1,5 @@
 import MovieCard from '../components/MovieCard';
+import Pagination from '../components/Pagination';
 
 import { Container, Title, MovieList } from '../styles/home';
 
@@ -18,6 +19,8 @@ export default function Home({ topMoviesData }) {
           <MovieCard movie={movie} />
         ))}
       </MovieList>
+
+      <Pagination />
     </Container>
   );
 }
