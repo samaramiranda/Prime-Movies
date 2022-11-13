@@ -7,10 +7,8 @@ const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiPath = process.env.NEXT_PUBLIC_API_PATH;
 
-export default function Home({ topMoviesData }) {
+export default function Home({ topMoviesData, page }) {
   const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
-
-  console.log('topMoviesData', topMoviesData);
 
   return (
     <Container>
@@ -22,7 +20,7 @@ export default function Home({ topMoviesData }) {
         ))}
       </MovieList>
 
-      <Pagination totalPages={totalPages} />
+      <Pagination totalPages={totalPages} initialPage={page} />
     </Container>
   );
 }
@@ -49,6 +47,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       topMoviesData: data,
+      page: Number(page),
     },
   };
 }
