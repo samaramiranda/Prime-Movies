@@ -1,14 +1,14 @@
-import MovieCard from '../../components/MovieCard';
-import Pagination from '../../components/Pagination';
+import MovieCard from '../components/MovieCard';
+import Pagination from '../components/Pagination';
 
-import { Container, Title, MovieList } from './styles';
+import { Container, Title, MovieList } from '../styles/home';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiPath = process.env.NEXT_PUBLIC_API_PATH;
 const apiPageLimit = 500;
 
-export default function Movies({ topMoviesData, page }) {
+export default function Home({ topMoviesData, page }) {
   const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
   const numberOfPages = totalPages > apiPageLimit ? apiPageLimit : totalPages;
 
@@ -27,21 +27,10 @@ export default function Movies({ topMoviesData, page }) {
   );
 }
 
-export const getStaticPaths = async () => ({
-  paths: [
-    {
-      params: {
-        page: '1',
-      },
-    },
-  ],
-  fallback: 'blocking',
-});
+export async function getStaticProps() {
+  // const { page } = params;
 
-export async function getStaticProps({ params }) {
-  const { page } = params;
-
-  const topMoviesUrl = `${apiPath}popular?api_key=${apiKey}&${apiLanguage}&page=${page}`;
+  const topMoviesUrl = `${apiPath}popular?api_key=${apiKey}&${apiLanguage}&page=${1}`;
 
   const res = await fetch(topMoviesUrl);
   const data = await res.json();
@@ -49,7 +38,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       topMoviesData: data,
-      page: Number(page),
+      page: 1,
     },
     revalidate: 300,
   };
