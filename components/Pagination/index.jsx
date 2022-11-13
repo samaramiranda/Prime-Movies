@@ -1,21 +1,20 @@
 import { Container } from './styles';
 
-export default function Pagination() {
+export default function Pagination({ totalPages }) {
   return (
     <Container
-      breakLabel="..."
+      // onPageChange={handlePageClick}
+      pageCount={totalPages}
+      renderOnZeroPageCount={null}
       previousLabel="<"
       nextLabel=">"
-      // onPageChange={handlePageClick}
-      pageRangeDisplayed={5}
-      pageCount={10}
-      renderOnZeroPageCount={false}
-      containerClassName="pagination"
+      breakLabel="..."
+      className="pagination"
       pageClassName="page"
       breakClassName="break"
       activeClassName="active"
       previousClassName="previous"
-      previousLinkClassName="next"
+      nextClassName="next"
     />
   );
 }

@@ -15,8 +15,9 @@ export const Container = styled(ReactPaginate)`
     align-items: center;
     justify-content: center;
     height: 30px;
-    width: 30px;
-    margin: 0 1.5px;
+    min-width: 30px;
+    margin: 0 1.2px;
+    padding: 0 5px;
     border-radius: 9px;
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.ultramarineBlue};
