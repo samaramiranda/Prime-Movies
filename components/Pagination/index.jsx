@@ -10,7 +10,7 @@ export default function Pagination({ totalPages, initialPage }) {
       onPageChange={e => router.push(`/movies/${e.selected + 1}`)}
       pageCount={totalPages}
       forcePage={initialPage - 1}
-      marginPagesDisplayed={5}
+      marginPagesDisplayed={3}
       renderOnZeroPageCount={null}
       previousLabel="<"
       nextLabel=">"
