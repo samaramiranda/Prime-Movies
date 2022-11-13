@@ -17,8 +17,12 @@ export default function Pagination({ totalPages, initialPage }) {
       breakLabel="..."
       className="pagination"
       pageClassName="page"
-      breakClassName="break"
       activeClassName="active"
+      pageLinkClassName="page-link"
+      breakLinkClassName="break-link"
+      previousLinkClassName="previous-link"
+      nextLinkClassName="next-link"
+      breakClassName="break"
       previousClassName="previous"
       nextClassName="next"
     />
