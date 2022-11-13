@@ -42,7 +42,7 @@ export const Container = styled.div`
   }
 
   &:hover ${MoreInformations} {
-    opacity: 1;
+    display: block;
   }
 `;
 
