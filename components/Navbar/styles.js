@@ -51,7 +51,7 @@ export const SearchBar = styled.form`
 
   input {
     flex: 1;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.cultured};
     padding: 0.625rem 0.9375rem;
     border: none;
     border-radius: 1.25rem 0 0 1.25rem;
@@ -59,7 +59,7 @@ export const SearchBar = styled.form`
     outline: none;
 
     &::placeholder {
-      color: #ffffff80;
+      color: ${({ theme }) => theme.colors.whiteOpacity80};
     }
   }
 

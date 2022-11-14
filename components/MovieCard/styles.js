@@ -25,7 +25,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.cultured};
   cursor: pointer;
   transition: 0.3s;
 

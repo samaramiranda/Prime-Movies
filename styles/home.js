@@ -33,6 +33,6 @@ export const NotFound = styled.div`
 
   p {
     font-size: 1.125rem;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.cultured};
   }
 `;

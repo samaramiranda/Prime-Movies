@@ -8,8 +8,9 @@ const theme = {
     ultramarineBlueOpacity25: '#2f5aff25',
     jordyBlue: '#89bdff',
 
-    white: '#fff',
     whiteOpacity80: '#ffffff80',
+
+    cultured: '#f5f5f5',
 
     goldenrod: '#d7a01d',
   },

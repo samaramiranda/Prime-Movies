@@ -13,7 +13,7 @@ export const Container = styled(ReactPaginate)`
   .next {
     margin: 0 1.2px;
     border-radius: 9px;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.cultured};
     background-color: ${({ theme }) => theme.colors.ultramarineBlue};
     cursor: pointer;
     transition: 0.3s;
