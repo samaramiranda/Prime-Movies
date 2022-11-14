@@ -6,10 +6,12 @@ import MovieRating from '../../components/MovieRating';
 
 import {
   Container,
+  Shadow,
   Informations,
   WrapperDetails,
   Details,
-  Title,
+  Overview,
+  OriginalTitle,
   Backdrop,
 } from '../../styles/movie';
 
@@ -26,36 +28,48 @@ export default function Movie({ data }) {
     vote_average: voteAverage,
     vote_count: voteCount,
     runtime,
-    release_date: releaseDate,
     genres,
+    release_date: releaseDate,
+    overview,
+    original_title: originalTitle,
   } = data;
+
+  console.log(data);
 
   const composeMovieGenres = () =>
     genres.map((genre, index) => (
-      <p>{index !== genres.length - 1 ? ` ${genre.name},` : genre.name}</p>
+      <p key={genre.id}>
+        {index !== genres.length - 1 ? ` ${genre.name},` : genre.name}
+      </p>
     ));
 
   return (
     <Container>
-      <Informations>
-        <Title>{title}</Title>
+      <Shadow>
+        <Informations>
+          <h1>{title}</h1>
 
-        <WrapperDetails>
-          <Details>
-            <MovieRating voteAverage={voteAverage} />
-            <p>/</p>
-            <p>{voteCount}</p>
-          </Details>
+          <WrapperDetails>
+            <Details isRating>
+              <MovieRating voteAverage={voteAverage} />
+              <p>/</p>
+              <p>{voteCount}</p>
+            </Details>
 
-          <Details>
-            <p>{formatToHoursAndMinutes(runtime)}</p>
-            <p>•</p>
-            {composeMovieGenres()}
-            <p>•</p>
-            <p>{formatDate(releaseDate, 'yyyy')}</p>
-          </Details>
-        </WrapperDetails>
-      </Informations>
+            <Details>
+              <p>{formatToHoursAndMinutes(runtime)}</p>
+              <p>•</p>
+              {composeMovieGenres()}
+              <p>•</p>
+              <p>{formatDate(releaseDate, 'yyyy')}</p>
+            </Details>
+          </WrapperDetails>
+
+          <Overview>{overview}</Overview>
+
+          <OriginalTitle>Titulo original: {originalTitle}</OriginalTitle>
+        </Informations>
+      </Shadow>
 
       <Backdrop backdropUrl={src} />
     </Container>

@@ -7,30 +7,44 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.richBlack};
 `;
 
-export const Informations = styled.div`
+export const Shadow = styled.div`
   flex: 0.3;
+  position: relative;
+  padding-left: 5rem;
+`;
+
+export const Informations = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 37vw;
+  color: ${({ theme }) => theme.colors.cultured};
 `;
 
 export const WrapperDetails = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: ${({ theme }) => theme.colors.cultured};
+  gap: 25px;
+  margin: 20px 0;
   font-size: 0.8438rem;
 `;
 
 export const Details = styled.div`
   display: flex;
-  gap: 5px;
+  gap: ${({ isRating }) => (isRating ? '5px' : '8px')};
 `;
 
-export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.cultured};
+export const Overview = styled.p`
+  font-size: 0.8438rem;
+  text-align: justify;
+`;
+
+export const OriginalTitle = styled.p`
+  font-size: 0.8438rem;
+  margin: 20px 0;
 `;
 
 export const Backdrop = styled.div`
