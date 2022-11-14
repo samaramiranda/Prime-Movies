@@ -1,6 +1,6 @@
 import getMovies from '../../services/getMovies';
 
-import { Container, Title } from '../../styles/movie';
+import { Container, Backdrop, Informations, Title } from '../../styles/movie';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
@@ -9,10 +9,15 @@ const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
 export default function Movie({ data }) {
   const src = `${apiImgPath}w1280${data.backdrop_path}`;
+  console.log(data);
 
   return (
-    <Container backdropUrl={src}>
-      <Title>{data.title}</Title>
+    <Container>
+      <Informations>
+        <Title>{data.title}</Title>
+      </Informations>
+
+      <Backdrop backdropUrl={src} />
     </Container>
   );
 }

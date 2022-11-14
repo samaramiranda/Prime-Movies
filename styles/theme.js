@@ -1,6 +1,7 @@
 const theme = {
   colors: {
     richBlack: '#060b28',
+    richBlackOpacity99: '#060b2899',
 
     ultramarineBlue: '#2f5aff',
     ultramarineBlueOpacity70: '#2f5aff70',
