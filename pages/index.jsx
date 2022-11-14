@@ -58,7 +58,6 @@ export const getServerSideProps = async ({ query }) => {
   const moviesUrl = `${
     search ? apiSearchPath : apiPopularMoviesPath
   }?api_key=${apiKey}&${apiLanguage}&query=${search}&page=${page}`;
-
   const data = await getMovies(moviesUrl);
 
   return {
