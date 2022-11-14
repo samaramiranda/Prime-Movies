@@ -1,7 +1,17 @@
+import Image from 'next/image';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 1rem 5rem 2.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Backdrop = styled(Image)`
+  object-fit: cover;
+  width: 100% !important;
 `;
 
 export const Title = styled.h1`
