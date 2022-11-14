@@ -12,7 +12,7 @@ import { Container, Title, MovieList, NotFound } from '../styles/home';
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiPopularMoviesPath = process.env.NEXT_PUBLIC_API_POPULAR_MOVIES_PATH;
-const apiSearchPath = process.env.NEXT_PUBLIC_SEARCH_PATH;
+const apiSearchPath = process.env.NEXT_PUBLIC_API_SEARCH_PATH;
 const apiPageLimit = 500;
 
 export default function Home({ topMoviesData, page }) {

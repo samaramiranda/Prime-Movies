@@ -6,10 +6,10 @@ import noImage from '../../public/images/no_image.png';
 
 import { Container, Poster, WrapperInformations, Informations } from './styles';
 
-const imgPath = process.env.NEXT_PUBLIC_IMG_PATH;
+const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
 export default function MovieCard({ movie }) {
-  const [src, setSrc] = useState(`${imgPath}${movie.poster_path}`);
+  const [src, setSrc] = useState(`${apiImgPath}${movie.poster_path}`);
 
   return (
     <Container>
