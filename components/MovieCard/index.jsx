@@ -11,7 +11,7 @@ import { Container, Poster, WrapperInformations, Informations } from './styles';
 const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
 export default function MovieCard({ movie }) {
-  const [src, setSrc] = useState(`${apiImgPath}${movie.poster_path}`);
+  const [src, setSrc] = useState(`${apiImgPath}w500${movie.poster_path}`);
 
   return (
     <Link href={`movie/${movie.id}`}>
