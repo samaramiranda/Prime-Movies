@@ -7,7 +7,12 @@ export default function Pagination({ totalPages, initialPage }) {
 
   return (
     <Container
-      onPageChange={e => router.push(`/movies/${e.selected + 1}`)}
+      onPageChange={e =>
+        router.push({
+          pathname: `/`,
+          query: { page: e.selected + 1 },
+        })
+      }
       pageCount={totalPages}
       forcePage={initialPage - 1}
       marginPagesDisplayed={3}
