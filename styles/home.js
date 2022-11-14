@@ -29,7 +29,7 @@ export const NotFound = styled.div`
   align-items: center;
   justify-content: center;
   gap: 4vw;
-  margin-top: 15vh;
+  margin-top: 16.5vh;
 
   p {
     font-size: 1.125rem;

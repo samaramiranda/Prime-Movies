@@ -23,7 +23,9 @@ export default function Home({ topMoviesData, page }) {
 
   return (
     <Container>
-      <Title>{search ? `Resultados para ${search}` : 'Filmes Populares'}</Title>
+      <Title>
+        {search ? `Resultados para: ${search}` : 'Filmes Populares'}
+      </Title>
 
       {topMoviesList.length > 0 ? (
         <MovieList>
