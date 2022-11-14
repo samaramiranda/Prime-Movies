@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -7,11 +5,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
 
-export const Backdrop = styled(Image)`
-  object-fit: cover;
-  width: 100% !important;
+  height: calc(100vh - 89.6px);
+  width: 100vw;
+
+  background-image: ${({ backdropUrl }) => `url(${backdropUrl})`};
+  background-position: center top;
+  background-size: 100% auto;
 `;
 
 export const Title = styled.h1`
