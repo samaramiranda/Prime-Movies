@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 89.6px);
+  height: calc(100vh - 5.6rem);
   background-color: ${({ theme }) => theme.colors.richBlack};
 `;
 
@@ -21,34 +21,34 @@ export const Informations = styled.div`
   top: 50%;
   transform: translateY(-50%);
   width: 37vw;
+  line-height: 1.25rem;
   color: ${({ theme }) => theme.colors.cultured};
-  line-height: 20px;
 `;
 
 export const WrapperDetails = styled.div`
   display: flex;
   align-items: center;
-  gap: 25px;
-  margin: 20px 0;
+  gap: 1.5625rem;
+  margin: 1.25rem 0;
   font-size: 0.8438rem;
 `;
 
 export const Details = styled.div`
   display: flex;
-  gap: ${({ isRating }) => (isRating ? '5px' : '8px')};
+  gap: ${({ isRating }) => (isRating ? '.3125rem' : '.5rem')};
 `;
 
 export const Overview = styled.p`
-  font-size: 0.9rem;
   text-align: justify;
+  font-size: 0.9rem;
 `;
 
 export const ExtraInformations = styled.div`
+  margin-top: 1.25rem;
   font-size: 0.9rem;
-  margin-top: 20px;
 
   p:first-of-type {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 `;
 
@@ -58,5 +58,5 @@ export const Backdrop = styled.div`
   background-position: center left;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 40vh 0 20vh -100px ${({ theme }) => theme.colors.richBlack};
+  box-shadow: inset 40vh 0 20vh -6.25rem ${({ theme }) => theme.colors.richBlack};
 `;
