@@ -11,7 +11,7 @@ import {
   WrapperDetails,
   Details,
   Overview,
-  OriginalTitle,
+  ExtraInformations,
   Backdrop,
 } from '../../styles/movie';
 
@@ -21,7 +21,7 @@ const apiMovieDetailsPath = process.env.NEXT_PUBLIC_API_MOVIE_DETAILS_PATH;
 const apiMovieCreditsPath = process.env.NEXT_PUBLIC_API_MOVIE_CREDITS_PATH;
 const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
-export default function Movie({ movie, cast }) {
+export default function Movie({ movie, mainCast }) {
   const src = `${apiImgPath}w1280${movie.backdrop_path}`;
 
   const {
@@ -35,14 +35,11 @@ export default function Movie({ movie, cast }) {
     original_title: originalTitle,
   } = movie;
 
-  console.log(movie);
-  console.log(cast);
-
-  const composeMovieGenres = () =>
-    genres.map((genre, index) => (
-      <p key={genre.id}>
-        {index !== genres.length - 1 ? ` ${genre.name},` : genre.name}
-      </p>
+  const composeList = dataArray =>
+    dataArray.map((data, index) => (
+      <span key={data.id}>
+        {index !== dataArray.length - 1 ? `${data.name}, ` : data.name}
+      </span>
     ));
 
   return (
@@ -61,7 +58,7 @@ export default function Movie({ movie, cast }) {
             <Details>
               <p>{formatToHoursAndMinutes(runtime)}</p>
               <p>•</p>
-              {composeMovieGenres()}
+              {composeList(genres)}
               <p>•</p>
               <p>{formatDate(releaseDate, 'yyyy')}</p>
             </Details>
@@ -69,7 +66,10 @@ export default function Movie({ movie, cast }) {
 
           <Overview>{overview}</Overview>
 
-          <OriginalTitle>Titulo original: {originalTitle}</OriginalTitle>
+          <ExtraInformations>
+            <p>Titulo original: {originalTitle}</p>
+            <p>Atores principais: {composeList(mainCast)}</p>
+          </ExtraInformations>
         </Informations>
       </Shadow>
 
@@ -94,13 +94,17 @@ export const getStaticProps = async ({ params }) => {
 
   const movieUrl = `${apiMovieDetailsPath}${id}?api_key=${apiKey}&${apiLanguage}`;
   const movieCreditsUrl = `${apiMovieDetailsPath}${id}/${apiMovieCreditsPath}?api_key=${apiKey}&${apiLanguage}`;
+
   const movie = await getMovies(movieUrl);
   const movieCredits = await getMovies(movieCreditsUrl);
+
+  const { cast } = movieCredits;
+  const mainCast = cast.slice(0, 5);
 
   return {
     props: {
       movie,
-      cast: movieCredits.cast,
+      mainCast,
     },
     revalidate: 300,
   };

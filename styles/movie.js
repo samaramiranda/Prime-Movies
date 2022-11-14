@@ -22,6 +22,7 @@ export const Informations = styled.div`
   transform: translateY(-50%);
   width: 37vw;
   color: ${({ theme }) => theme.colors.cultured};
+  line-height: 20px;
 `;
 
 export const WrapperDetails = styled.div`
@@ -38,13 +39,17 @@ export const Details = styled.div`
 `;
 
 export const Overview = styled.p`
-  font-size: 0.8438rem;
+  font-size: 0.9rem;
   text-align: justify;
 `;
 
-export const OriginalTitle = styled.p`
-  font-size: 0.8438rem;
-  margin: 20px 0;
+export const ExtraInformations = styled.div`
+  font-size: 0.9rem;
+  margin-top: 20px;
+
+  p:first-of-type {
+    margin-bottom: 10px;
+  }
 `;
 
 export const Backdrop = styled.div`
