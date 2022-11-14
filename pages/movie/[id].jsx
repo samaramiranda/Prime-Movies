@@ -17,8 +17,6 @@ import {
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
-const apiMovieDetailsPath = process.env.NEXT_PUBLIC_API_MOVIE_DETAILS_PATH;
-const apiMovieCreditsPath = process.env.NEXT_PUBLIC_API_MOVIE_CREDITS_PATH;
 const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
 export default function Movie({ movie, mainCast }) {
@@ -92,8 +90,8 @@ export const getStaticPaths = async () => ({
 export const getStaticProps = async ({ params }) => {
   const { id } = params;
 
-  const movieUrl = `${apiMovieDetailsPath}${id}?api_key=${apiKey}&${apiLanguage}`;
-  const movieCreditsUrl = `${apiMovieDetailsPath}${id}/${apiMovieCreditsPath}?api_key=${apiKey}&${apiLanguage}`;
+  const movieUrl = `movie/${id}?api_key=${apiKey}&${apiLanguage}`;
+  const movieCreditsUrl = `movie/${id}/credits?api_key=${apiKey}&${apiLanguage}`;
 
   const movie = await getMovieData(movieUrl);
   const movieCredits = await getMovieData(movieCreditsUrl);
