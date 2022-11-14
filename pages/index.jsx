@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 
+import useQueryParams from '../hooks/useQueryParams';
 import imgSadness from '../public/images/not_found_sadness.png';
 
 import MovieCard from '../components/MovieCard';
@@ -15,8 +15,7 @@ const apiSearchPath = process.env.NEXT_PUBLIC_SEARCH_PATH;
 const apiPageLimit = 500;
 
 export default function Home({ topMoviesData, page }) {
-  const router = useRouter();
-  const search = router.query?.search;
+  const search = useQueryParams('search');
 
   const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
   const numberOfPages = totalPages > apiPageLimit ? apiPageLimit : totalPages;

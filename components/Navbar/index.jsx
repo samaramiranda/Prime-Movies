@@ -3,12 +3,14 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import useQueryParams from '../../hooks/useQueryParams';
+
 import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
 
 export default function Navbar() {
   const search = useRef(null);
   const router = useRouter();
-  const querySearch = router.query?.search || null;
+  const querySearch = useQueryParams('search');
 
   useEffect(() => {
     if (search.current) {

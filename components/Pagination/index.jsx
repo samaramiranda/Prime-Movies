@@ -1,10 +1,12 @@
 import { useRouter } from 'next/router';
 
+import useQueryParams from '../../hooks/useQueryParams';
+
 import { Container } from './styles';
 
 export default function Pagination({ totalPages, initialPage }) {
   const router = useRouter();
-  const search = router.query?.search;
+  const search = useQueryParams('search');
 
   return (
     <Container
