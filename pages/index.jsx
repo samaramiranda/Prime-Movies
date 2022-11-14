@@ -28,7 +28,7 @@ export default function Home({ topMoviesData, page }) {
 }
 
 export const getServerSideProps = async ({ query }) => {
-  const page = Object.keys(query).length !== 0 ? query.page : 1;
+  const page = query?.page || 1;
   const topMoviesUrl = `${apiPath}popular?api_key=${apiKey}&${apiLanguage}&page=${page}`;
 
   const res = await fetch(topMoviesUrl);
