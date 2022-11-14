@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Link from 'next/link';
+
 import Rating from './Rating';
 import MoreInformations from './MoreInformations';
 import noImage from '../../public/images/no_image.png';
@@ -12,23 +14,25 @@ export default function MovieCard({ movie }) {
   const [src, setSrc] = useState(`${apiImgPath}${movie.poster_path}`);
 
   return (
-    <Container>
-      <Poster
-        src={src}
-        alt="Poster do Filme"
-        width={189}
-        height={284}
-        onError={() => setSrc(noImage)}
-      />
+    <Link href={`movie/${movie.id}`}>
+      <Container>
+        <Poster
+          src={src}
+          alt="Poster do Filme"
+          width={189}
+          height={284}
+          onError={() => setSrc(noImage)}
+        />
 
-      <WrapperInformations>
-        <Informations>
-          <h4>{movie.title}</h4>
-          <Rating movie={movie} />
-        </Informations>
+        <WrapperInformations>
+          <Informations>
+            <h4>{movie.title}</h4>
+            <Rating movie={movie} />
+          </Informations>
 
-        <MoreInformations movie={movie} />
-      </WrapperInformations>
-    </Container>
+          <MoreInformations movie={movie} />
+        </WrapperInformations>
+      </Container>
+    </Link>
   );
 }
