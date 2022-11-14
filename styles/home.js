@@ -23,3 +23,16 @@ export const MovieList = styled.div`
   grid-row-gap: 1.6em;
   padding: 2.8rem 0;
 `;
+
+export const NotFound = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  margin-top: 15vh;
+
+  p {
+    font-size: 1.125rem;
+    color: ${({ theme }) => theme.colors.white};
+  }
+`;

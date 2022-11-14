@@ -1,7 +1,11 @@
+import Image from 'next/image';
+
+import imgSadness from '../public/images/not_found_sadness.png';
+
 import MovieCard from '../components/MovieCard';
 import Pagination from '../components/Pagination';
 
-import { Container, Title, MovieList } from '../styles/home';
+import { Container, Title, MovieList, NotFound } from '../styles/home';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
@@ -17,11 +21,24 @@ export default function Home({ topMoviesData, page }) {
     <Container>
       <Title>Filmes Populares</Title>
 
-      <MovieList>
-        {topMoviesList.map(movie => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </MovieList>
+      {topMoviesList.length > 0 ? (
+        <MovieList>
+          {topMoviesList.map(movie => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </MovieList>
+      ) : (
+        <NotFound>
+          <Image
+            src={imgSadness}
+            alt="Não encontrado"
+            width={224}
+            height={320}
+          />
+
+          <p>Nenhum resultado encontrado!</p>
+        </NotFound>
+      )}
 
       <Pagination totalPages={numberOfPages} initialPage={page} />
     </Container>
