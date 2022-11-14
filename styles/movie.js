@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.richBlack};
 `;
 
-export const Shadow = styled.div`
+export const WrapperInformations = styled.div`
   flex: 0.3;
   position: relative;
   padding-left: 5rem;

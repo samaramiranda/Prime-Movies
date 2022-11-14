@@ -6,7 +6,7 @@ import MovieRating from '../../components/MovieRating';
 
 import {
   Container,
-  Shadow,
+  WrapperInformations,
   Informations,
   WrapperDetails,
   Details,
@@ -24,12 +24,12 @@ export default function Movie({ movie, mainCast }) {
 
   const {
     title,
-    vote_average: voteAverage,
-    vote_count: voteCount,
     runtime,
     genres,
-    release_date: releaseDate,
     overview,
+    vote_average: voteAverage,
+    vote_count: voteCount,
+    release_date: releaseDate,
     original_title: originalTitle,
   } = movie;
 
@@ -42,7 +42,7 @@ export default function Movie({ movie, mainCast }) {
 
   return (
     <Container>
-      <Shadow>
+      <WrapperInformations>
         <Informations>
           <h1>{title}</h1>
 
@@ -69,7 +69,7 @@ export default function Movie({ movie, mainCast }) {
             <p>Atores principais: {composeList(mainCast)}</p>
           </ExtraInformations>
         </Informations>
-      </Shadow>
+      </WrapperInformations>
 
       <Backdrop backdropUrl={src} />
     </Container>
