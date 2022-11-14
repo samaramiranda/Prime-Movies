@@ -1,5 +1,7 @@
 import getMovies from '../../services/getMovies';
 
+import { Container, Title } from '../../styles/movie';
+
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiMovieDetailsPath = process.env.NEXT_PUBLIC_API_MOVIE_DETAILS_PATH;
@@ -7,7 +9,11 @@ const apiMovieDetailsPath = process.env.NEXT_PUBLIC_API_MOVIE_DETAILS_PATH;
 export default function Movie({ data }) {
   console.log('data', data);
 
-  return <h1 style={{ color: '#fff' }}>ID: {data.title}</h1>;
+  return (
+    <Container>
+      <Title>Titulo: {data.title}</Title>
+    </Container>
+  );
 }
 
 export const getStaticPaths = async () => ({
