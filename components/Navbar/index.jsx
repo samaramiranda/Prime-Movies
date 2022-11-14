@@ -1,8 +1,27 @@
+import { useRef } from 'react';
+
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
 
 export default function Navbar() {
+  const router = useRouter();
+  const search = useRef(null);
+
+  const handleSearch = e => {
+    e.preventDefault();
+
+    if (!search.current.value) {
+      return;
+    }
+
+    router.push({
+      pathname: `/`,
+      query: { search: search.current.value },
+    });
+  };
+
   return (
     <Container>
       <Link href="/">
@@ -16,8 +35,8 @@ export default function Navbar() {
         </Logo>
       </Link>
 
-      <SearchBar>
-        <input type="text" placeholder="Busque um filme" />
+      <SearchBar onSubmit={handleSearch}>
+        <input type="text" placeholder="Busque um filme" ref={search} />
         <button type="submit">
           <IconSearch />
         </button>
