@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import getMovies from '../services/getMovies';
 import useQueryParams from '../hooks/useQueryParams';
 import imgSadness from '../public/images/not_found_sadness.png';
 
@@ -58,8 +59,7 @@ export const getServerSideProps = async ({ query }) => {
     search ? apiSearchPath : apiPopularMoviesPath
   }?api_key=${apiKey}&${apiLanguage}&query=${search}&page=${page}`;
 
-  const res = await fetch(moviesUrl);
-  const data = await res.json();
+  const data = await getMovies(moviesUrl);
 
   return {
     props: {
