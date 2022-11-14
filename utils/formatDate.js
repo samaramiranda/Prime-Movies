@@ -1,14 +1,7 @@
 const formatDate = (date, format) => {
-  if (date) {
-    const [year, month, day] = date.split('-');
-
-    if (format === 'dd/mm/yyyy') {
-      return `${day}/${month}/${year}`;
-    }
-
-    if (format === 'yyyy') {
-      return year;
-    }
+  if (date && format) {
+    const [year] = date.split('-');
+    return year;
   }
 
   return null;
