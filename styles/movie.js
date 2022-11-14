@@ -16,12 +16,21 @@ export const Informations = styled.div`
   text-align: left;
 `;
 
+export const WrapperDetails = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: ${({ theme }) => theme.colors.cultured};
+  font-size: 0.8438rem;
+`;
+
 export const Details = styled.div`
   display: flex;
+  gap: 5px;
 `;
 
 export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.cultured};
 `;
 
 export const Backdrop = styled.div`

@@ -1,10 +1,12 @@
 import getMovies from '../../services/getMovies';
+import formatDate from '../../utils/formatDate';
 
 import MovieRating from '../../components/MovieRating';
 
 import {
   Container,
   Informations,
+  WrapperDetails,
   Details,
   Title,
   Backdrop,
@@ -17,16 +19,41 @@ const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
 export default function Movie({ data }) {
   const src = `${apiImgPath}w1280${data.backdrop_path}`;
-  console.log(data);
+
+  const {
+    title,
+    vote_average: voteAverage,
+    vote_count: voteCount,
+    runtime,
+    release_date: releaseDate,
+    genres,
+  } = data;
+
+  const composeMovieGenres = () =>
+    genres.map((genre, index) => (
+      <p>{index !== genres.length - 1 ? ` ${genre.name},` : genre.name}</p>
+    ));
 
   return (
     <Container>
       <Informations>
-        <Title>{data.title}</Title>
+        <Title>{title}</Title>
 
-        <Details>
-          <MovieRating voteAverage={data.vote_average} />
-        </Details>
+        <WrapperDetails>
+          <Details>
+            <MovieRating voteAverage={voteAverage} />
+            <p>/</p>
+            <p>{voteCount}</p>
+          </Details>
+
+          <Details>
+            <p>{runtime}</p>
+            <p>•</p>
+            {composeMovieGenres()}
+            <p>•</p>
+            <p>{formatDate(releaseDate, 'yyyy')}</p>
+          </Details>
+        </WrapperDetails>
       </Informations>
 
       <Backdrop backdropUrl={src} />
