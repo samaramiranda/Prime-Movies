@@ -5,7 +5,7 @@ import { Container, Title, MovieList } from '../styles/home';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
-const apiPath = process.env.NEXT_PUBLIC_API_PATH;
+const apiPopularMoviesPath = process.env.NEXT_PUBLIC_API_POPULAR_MOVIES_PATH;
 const apiPageLimit = 500;
 
 export default function Home({ topMoviesData, page }) {
@@ -31,7 +31,7 @@ export const getServerSideProps = async ({ query }) => {
   const page = query?.page || 1;
   const search = query?.search || null;
 
-  const topMoviesUrl = `${apiPath}popular?api_key=${apiKey}&${apiLanguage}&page=${page}`;
+  const topMoviesUrl = `${apiPopularMoviesPath}?api_key=${apiKey}&${apiLanguage}&page=${page}`;
 
   const res = await fetch(topMoviesUrl);
   const data = await res.json();
