@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import imgSadness from '../public/images/not_found_sadness.png';
 
@@ -14,12 +15,15 @@ const apiSearchPath = process.env.NEXT_PUBLIC_SEARCH_PATH;
 const apiPageLimit = 500;
 
 export default function Home({ topMoviesData, page }) {
+  const router = useRouter();
+  const search = router.query?.search;
+
   const { results: topMoviesList, total_pages: totalPages } = topMoviesData;
   const numberOfPages = totalPages > apiPageLimit ? apiPageLimit : totalPages;
 
   return (
     <Container>
-      <Title>Filmes Populares</Title>
+      <Title>{search ? `Resultados para ${search}` : 'Filmes Populares'}</Title>
 
       {topMoviesList.length > 0 ? (
         <MovieList>
