@@ -4,7 +4,7 @@ export default function MovieRating({ voteAverage }) {
   return (
     <Container>
       <IconRating />
-      <p>{voteAverage}</p>
+      <p>{voteAverage.toFixed(1)}</p>
     </Container>
   );
 }
