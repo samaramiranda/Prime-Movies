@@ -57,11 +57,11 @@ export const getServerSideProps = async ({ query }) => {
     search ? 'search/movie/' : 'movie/popular/'
   }?api_key=${apiKey}&${apiLanguage}&query=${search}&page=${page}`;
 
-  const data = await getMovieData(moviesUrl);
+  const topMoviesData = await getMovieData(moviesUrl);
 
   return {
     props: {
-      topMoviesData: data,
+      topMoviesData,
       page,
     },
   };
