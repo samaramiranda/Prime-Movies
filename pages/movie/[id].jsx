@@ -1,4 +1,4 @@
-import getMovies from '../../services/getMovies';
+import getMovieData from '../../services/getMovieData';
 import formatDate from '../../utils/formatDate';
 import formatToHoursAndMinutes from '../../utils/formatToHoursAndMinutes';
 
@@ -95,8 +95,8 @@ export const getStaticProps = async ({ params }) => {
   const movieUrl = `${apiMovieDetailsPath}${id}?api_key=${apiKey}&${apiLanguage}`;
   const movieCreditsUrl = `${apiMovieDetailsPath}${id}/${apiMovieCreditsPath}?api_key=${apiKey}&${apiLanguage}`;
 
-  const movie = await getMovies(movieUrl);
-  const movieCredits = await getMovies(movieCreditsUrl);
+  const movie = await getMovieData(movieUrl);
+  const movieCredits = await getMovieData(movieCreditsUrl);
 
   const { cast } = movieCredits;
   const mainCast = cast.slice(0, 5);
