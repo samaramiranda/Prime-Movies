@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -6,8 +6,15 @@ import Link from 'next/link';
 import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
 
 export default function Navbar() {
-  const router = useRouter();
   const search = useRef(null);
+  const router = useRouter();
+  const querySearch = router.query?.search || null;
+
+  useEffect(() => {
+    if (search.current) {
+      search.current.value = querySearch;
+    }
+  });
 
   const handleSearch = e => {
     e.preventDefault();
