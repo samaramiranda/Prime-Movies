@@ -1,6 +1,14 @@
 import getMovies from '../../services/getMovies';
 
-import { Container, Backdrop, Informations, Title } from '../../styles/movie';
+import Rating from '../../components/MovieCard/Rating';
+
+import {
+  Container,
+  Informations,
+  Details,
+  Title,
+  Backdrop,
+} from '../../styles/movie';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
@@ -15,6 +23,10 @@ export default function Movie({ data }) {
     <Container>
       <Informations>
         <Title>{data.title}</Title>
+
+        <Details>
+          <Rating movie={data} />
+        </Details>
       </Informations>
 
       <Backdrop backdropUrl={src} />
