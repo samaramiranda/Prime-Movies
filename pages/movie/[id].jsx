@@ -1,5 +1,6 @@
 import getMovies from '../../services/getMovies';
 import formatDate from '../../utils/formatDate';
+import formatToHoursAndMinutes from '../../utils/formatToHoursAndMinutes';
 
 import MovieRating from '../../components/MovieRating';
 
@@ -47,7 +48,7 @@ export default function Movie({ data }) {
           </Details>
 
           <Details>
-            <p>{runtime}</p>
+            <p>{formatToHoursAndMinutes(runtime)}</p>
             <p>•</p>
             {composeMovieGenres()}
             <p>•</p>
