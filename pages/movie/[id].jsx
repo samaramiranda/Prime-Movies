@@ -1,6 +1,6 @@
 import getMovies from '../../services/getMovies';
 
-import Rating from '../../components/MovieCard/Rating';
+import MovieRating from '../../components/MovieRating';
 
 import {
   Container,
@@ -25,7 +25,7 @@ export default function Movie({ data }) {
         <Title>{data.title}</Title>
 
         <Details>
-          <Rating movie={data} />
+          <MovieRating voteAverage={data.vote_average} />
         </Details>
       </Informations>
 

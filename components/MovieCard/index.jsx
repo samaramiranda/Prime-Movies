@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 
-import Rating from './Rating';
+import MovieRating from '../MovieRating';
 import MoreInformations from './MoreInformations';
 import noImage from '../../public/images/no_image.png';
 
@@ -27,7 +27,7 @@ export default function MovieCard({ movie }) {
         <WrapperInformations>
           <Informations>
             <h4>{movie.title}</h4>
-            <Rating movie={movie} />
+            <MovieRating voteAverage={movie.vote_average} />
           </Informations>
 
           <MoreInformations movie={movie} />

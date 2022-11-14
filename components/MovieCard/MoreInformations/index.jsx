@@ -1,4 +1,4 @@
-import Rating from '../Rating';
+import MovieRating from '../../MovieRating';
 import formatDate from '../../../utils/formatDate';
 
 import { Container, Overview, WrapperDetails, Date } from './styles';
@@ -10,7 +10,7 @@ export default function MoreInformations({ movie }) {
       <Overview>{movie.overview}</Overview>
 
       <WrapperDetails>
-        <Rating movie={movie} />
+        <MovieRating voteAverage={movie.vote_average} />
         <Date>{formatDate(movie.release_date, 'yyyy')}</Date>
       </WrapperDetails>
     </Container>

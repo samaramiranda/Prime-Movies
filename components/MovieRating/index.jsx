@@ -1,10 +1,10 @@
 import { Container, IconRating } from './styles';
 
-export default function Rating({ movie }) {
+export default function MovieRating({ voteAverage }) {
   return (
     <Container>
       <IconRating />
-      <p>{movie.vote_average}</p>
+      <p>{voteAverage}</p>
     </Container>
   );
 }
