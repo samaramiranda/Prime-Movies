@@ -18,10 +18,11 @@ import {
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
 const apiMovieDetailsPath = process.env.NEXT_PUBLIC_API_MOVIE_DETAILS_PATH;
+const apiMovieCreditsPath = process.env.NEXT_PUBLIC_API_MOVIE_CREDITS_PATH;
 const apiImgPath = process.env.NEXT_PUBLIC_API_IMG_PATH;
 
-export default function Movie({ data }) {
-  const src = `${apiImgPath}w1280${data.backdrop_path}`;
+export default function Movie({ movie, cast }) {
+  const src = `${apiImgPath}w1280${movie.backdrop_path}`;
 
   const {
     title,
@@ -32,9 +33,10 @@ export default function Movie({ data }) {
     release_date: releaseDate,
     overview,
     original_title: originalTitle,
-  } = data;
+  } = movie;
 
-  console.log(data);
+  console.log(movie);
+  console.log(cast);
 
   const composeMovieGenres = () =>
     genres.map((genre, index) => (
@@ -91,11 +93,14 @@ export const getStaticProps = async ({ params }) => {
   const { id } = params;
 
   const movieUrl = `${apiMovieDetailsPath}${id}?api_key=${apiKey}&${apiLanguage}`;
-  const data = await getMovies(movieUrl);
+  const movieCreditsUrl = `${apiMovieDetailsPath}${id}/${apiMovieCreditsPath}?api_key=${apiKey}&${apiLanguage}`;
+  const movie = await getMovies(movieUrl);
+  const movieCredits = await getMovies(movieCreditsUrl);
 
   return {
     props: {
-      data,
+      movie,
+      cast: movieCredits.cast,
     },
     revalidate: 300,
   };
