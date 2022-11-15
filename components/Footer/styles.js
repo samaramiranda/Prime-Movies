@@ -26,7 +26,17 @@ export const Line = styled.hr`
   background-color: ${({ theme }) => theme.colors.flameOpacity70};
 `;
 
-export const IconSocialNetwork = styled(FaGithub, FaLinkedin)`
+export const IconGitHub = styled(FaGithub)`
+  font-size: 1.75rem;
+  color: ${({ theme }) => theme.colors.cultured};
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const IconLinkedin = styled(FaLinkedin)`
   font-size: 1.75rem;
   color: ${({ theme }) => theme.colors.cultured};
   cursor: pointer;
