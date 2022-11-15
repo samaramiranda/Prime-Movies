@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  🎬 Prime Movies
+</h1>
 
-## Getting Started
 
-First, run the development server:
+## :rocket: Sobre o projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Este é um site de listagem e busca de filmes, os dados são obtidos por meio da integração com a API do The Movie Database (TMDB). 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Na pagina inicial são listados todos os filmes mais populares do momento em cards com o pôster, nome e média de avaliação. Ao passar o mouse sobre o card ele será expandido, exibindo também parte da sinopse e o ano de lançamento daquele filme.<br/>
+Nessa página foi utilizada a tecnologia de Server Side Rendering (SSR) do Next.js, de modo que a requisição dos filmes seja feita antes da renderização da página. Após a conclusão da requisição os dados são passados para a página, exibindo assim o conteúdo dela e proporcionando um aumento no desempenho.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Ao clicar em um filme na pagina inicial o usuário será redirecionado para outra página contendo os detalhes daquele filme. Nela é exibida uma imagem de plano de fundo daquele filme e também as informações mais detalhadas a respeito dele, como: Duração, gênero, título original, atores principais...<br/>
+Nessa página foi utilizada a tecnologia de Static Site Generation (SSG) do Next.js, de modo que seja gerada uma página estática sempre que um novo filme é acessado, então quando o próximo usuário acessar a página desse filme ele não precisará aguardar o carregamento da requisição com os dados, pois ela já foi gerada estáticamente assim que o primeiro usuário a acessou. Essa abordagem traz um grande aumento de desempenho, pois remove a necessidade de uma nova requisição sempre que a página for acessada novamente.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Além disso, também foi utilizada a tecnologia de Incremental Static Regeneration (ISR) para a atualização das páginas estáticas, de modo que cada página estática gerada seja atualizada a cada 5 minutos, isso faz com que a página não seja atualizada em todos os acesso, mas também não fique desatualizada até que um novo build seja gerado.
 
-## Learn More
+No header de todas as páginas é exibida uma barra de buscas onde o usuário consegue filtrar os filmes. Ao buscar um filme os resultados serão listados em formato de card. No campo de buscas foi utilizado o processo de controle de fluxo Debounce, de modo que não seja feita mais de uma busca a cada 500ms, que é o limite de requisições da API, além de exibir uma mensagem informando esse limite ao usuário.
 
-To learn more about Next.js, take a look at the following resources:
+Nos pôsteres dos filmes foi utilizada a ferramenta de otimização de imagens do Next.js que usa o lazy loading nativo dos navegadores, desse modo as imagens são carregadas apenas quando estão visíveis na tela do usuário ou no scroll próximas de serem visíveis. Isso impede que imagens que não estão visíveis e nem próximas de estarem sejam carregadas sem necessidade, aumentando assim o desempenho da página.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Nas funções utilitárias foram realizados testes unitários utilizando o framework Jest, que visa garantir a qualidade e o resultado esperado em cada função.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Acesse o deploy do projeto**: https://prime-movies.vercel.app
 
-## Deploy on Vercel
+## :mag: Tecnologias usadas:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `Javascript`
+- `Next.js`
+- `Styled Components`
+- `Jest`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## :computer: Funcionalidades do projeto:
+
+- `Listagem dos filmes mais populares do momento`
+- `Busca de filmes pelo nome`
+- `Paginação`
+- `Lazy loading`
+- `Debounce`
+- `Testes com Jest`
+
+
+## :bulb: Telas
+![1](https://user-images.githubusercontent.com/23708544/202025696-c11e7ba8-f1a4-4fd2-8fa8-009d2008b261.png)
+
+![2](https://user-images.githubusercontent.com/23708544/202026538-a22214d3-8c8c-4a8a-97da-d92a875b5913.png)
+
+![3](https://user-images.githubusercontent.com/23708544/202026818-5bc928bd-16c5-4058-8b98-44c808ea26c6.png)
+
+![4](https://user-images.githubusercontent.com/23708544/202026885-1249ea82-c15f-482b-a2df-b6c779741c2e.png)
+
+
+
+## :wrench: Iniciando o projeto
+1. Clone este repositório usando: `git clone https://github.com/samaramiranda/Prime-Movies.git`;
+2. Entre no diretório;
+3. Rode o comando `npm install` para instalar todas as dependências;
+4. Rode o comando `npm run dev` para iniciar a aplicação.
