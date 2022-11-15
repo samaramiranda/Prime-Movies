@@ -94,8 +94,10 @@ export const IconSearch = styled(ImSearch)`
 
 export const ErrorDebounce = styled.div`
   position: absolute;
-  bottom: -2.1875rem;
-  padding: 0 0.3125rem;
-  font-size: 12px;
+  bottom: -2.2rem;
+  padding: 0 0.3125rem 0.2rem;
+  border-radius: 0.3125rem;
+  font-size: 0.75rem;
   color: ${({ theme }) => theme.colors.goldenrod};
+  background-color: ${({ theme }) => theme.colors.richBlack};
 `;
