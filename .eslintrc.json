@@ -19,6 +19,7 @@
     "plugins": [
         "react",
         "prettier",
+        "jest",
         "eslint-plugin-import-helpers"
     ],
     "rules": {
@@ -48,5 +49,8 @@
                 "alphabetize": { "ignoreCase": true }
             }
         ]
+    },
+    "env": {
+        "jest/globals": true
     }
 }
