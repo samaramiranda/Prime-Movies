@@ -80,7 +80,7 @@ export const getStaticPaths = async () => ({
   paths: [
     {
       params: {
-        id: '1',
+        id: '315635',
       },
     },
   ],
@@ -97,7 +97,7 @@ export const getStaticProps = async ({ params }) => {
   const movieCredits = await getMovieData(movieCreditsUrl);
 
   const { cast } = movieCredits;
-  const mainCast = cast.slice(0, 5);
+  const mainCast = cast?.slice(0, 5);
 
   return {
     props: {
