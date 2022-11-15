@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1.5625rem;
-  padding: 2.5rem 5rem;
+  padding: 2rem 5rem;
   background-color: ${({ theme }) => theme.colors.richBlackOpacity99};
 
   div {
