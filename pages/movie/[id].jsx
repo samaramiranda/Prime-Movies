@@ -58,7 +58,7 @@ export default function Movie({ movie, mainCast }) {
               <p>•</p>
               {composeList(genres)}
               <p>•</p>
-              <p>{formatDate(releaseDate, 'yyyy')}</p>
+              <p>{formatDate(releaseDate)}</p>
             </Details>
           </WrapperDetails>
 

@@ -1,5 +1,5 @@
-const formatDate = (date, format) => {
-  if (date && format) {
+const formatDate = date => {
+  if (date) {
     const [year] = date.split('-');
     return year;
   }

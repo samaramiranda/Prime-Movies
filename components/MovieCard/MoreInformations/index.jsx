@@ -11,7 +11,7 @@ export default function MoreInformations({ movie }) {
 
       <WrapperDetails>
         <MovieRating voteAverage={movie.vote_average} />
-        <Date>{formatDate(movie.release_date, 'yyyy')}</Date>
+        <Date>{formatDate(movie.release_date)}</Date>
       </WrapperDetails>
     </Container>
   );
