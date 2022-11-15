@@ -56,7 +56,7 @@ export const ExtraInformations = styled.div`
 export const Backdrop = styled.div`
   flex: 0.7;
   background-image: ${({ backdropUrl }) => `url(${backdropUrl})`};
-  background-position: center left;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset 40vh 0 20vh -6.25rem ${({ theme }) => theme.colors.chineseBlack};
