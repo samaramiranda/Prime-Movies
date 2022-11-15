@@ -4,19 +4,22 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import useQueryParams from '../../hooks/useQueryParams';
+import debounce from '../../utils/debounce';
 
 import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
 
 export default function Navbar() {
   const search = useRef(null);
+  const debounceRunning = useRef(false);
   const router = useRouter();
   const querySearch = useQueryParams('search');
 
-  useEffect(() => {
-    if (search.current) {
-      search.current.value = querySearch;
-    }
-  });
+  const navigateToMovie = () => {
+    router.push({
+      pathname: `/`,
+      query: { search: search.current.value },
+    });
+  };
 
   const handleSearch = e => {
     e.preventDefault();
@@ -25,11 +28,18 @@ export default function Navbar() {
       return;
     }
 
-    router.push({
-      pathname: `/`,
-      query: { search: search.current.value },
-    });
+    if (debounceRunning.current) {
+      return;
+    }
+
+    debounce(navigateToMovie, 500, debounceRunning)();
   };
+
+  useEffect(() => {
+    if (search.current) {
+      search.current.value = querySearch;
+    }
+  });
 
   return (
     <Container>
