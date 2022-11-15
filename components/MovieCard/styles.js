@@ -27,7 +27,7 @@ export const Container = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.colors.cultured};
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 
   &:hover {
     transform: scale(1.1);
