@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -10,9 +10,10 @@ import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
 
 export default function Navbar() {
   const search = useRef(null);
-  const debounceRunning = useRef(false);
   const router = useRouter();
   const querySearch = useQueryParams('search');
+
+  const [debounceRunning, setDebounceRunning] = useState(false);
 
   const navigateToMovie = () => {
     router.push({
@@ -27,19 +28,19 @@ export default function Navbar() {
     if (!search.current.value) {
       return;
     }
-
-    if (debounceRunning.current) {
+    if (debounceRunning) {
+      console.log('AGUARDA');
       return;
     }
 
-    debounce(navigateToMovie, 500, debounceRunning)();
+    debounce(navigateToMovie, 500, setDebounceRunning)();
   };
 
   useEffect(() => {
     if (search.current) {
       search.current.value = querySearch;
     }
-  });
+  }, [querySearch]);
 
   return (
     <Container>

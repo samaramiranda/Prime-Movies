@@ -1,6 +1,6 @@
-const debounce = (fn, delay, debounceRunning) => {
+const debounce = (fn, delay, setDebounceRunning) => {
   let timer = null;
-  debounceRunning.current = true;
+  setDebounceRunning(true);
 
   const debouncedFn = (...args) => {
     if (timer) {
@@ -9,7 +9,7 @@ const debounce = (fn, delay, debounceRunning) => {
 
     timer = setTimeout(() => {
       fn(...args);
-      debounceRunning.current = false;
+      setDebounceRunning(false);
     }, delay);
   };
 
