@@ -22,6 +22,7 @@ export default function MovieCard({ movie }) {
           width={189}
           height={284}
           onError={() => setSrc(noImage)}
+          priority
         />
 
         <WrapperInformations>
