@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 1.5625rem;
   padding: 2rem 5rem;
-  background-color: ${({ theme }) => theme.colors.chineseBlack99};
+  background-color: ${({ theme }) => theme.colors.chineseBlack};
 
   div {
     display: flex;
