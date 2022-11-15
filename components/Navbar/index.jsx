@@ -32,9 +32,10 @@ export default function Navbar() {
   const handleSearch = e => {
     e.preventDefault();
 
-    if (!search.current.value) {
+    if (!search.current.value && !querySearch) {
       return;
     }
+
     if (debounceRunning) {
       return;
     }
