@@ -20,7 +20,8 @@ export default function Navbar() {
   const router = useRouter();
   const querySearch = useQueryParams('search');
 
-  const [debounceRunning, setDebounceRunning] = useState(false);
+  const [timer, setTimer] = useState(null);
+  const [errorDebounce, setErrorDebounce] = useState(false);
 
   const navigateToMovie = () => {
     router.push({
@@ -36,11 +37,8 @@ export default function Navbar() {
       return;
     }
 
-    if (debounceRunning) {
-      return;
-    }
-
-    debounce(navigateToMovie, 500, setDebounceRunning)();
+    setErrorDebounce(!!timer);
+    debounce(navigateToMovie, 500, timer, setTimer)();
   };
 
   useEffect(() => {
@@ -68,7 +66,7 @@ export default function Navbar() {
           <IconSearch />
         </button>
 
-        {debounceRunning && (
+        {errorDebounce && (
           <ErrorDebounce>
             <p>
               Limite de requisições a API atingido. Tente novamente em alguns

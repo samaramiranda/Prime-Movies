@@ -1,16 +1,17 @@
-export default function debounce(fn, delay, setDebounceRunning) {
-  let timer = null;
-  setDebounceRunning(true);
-
+export default function debounce(fn, delay, timer, setTimer) {
   const debouncedFn = (...args) => {
     if (timer) {
       window.clearTimeout(timer);
+      setTimer(null);
+      return;
     }
 
-    timer = setTimeout(() => {
-      fn(...args);
-      setDebounceRunning(false);
-    }, delay);
+    setTimer(
+      setTimeout(() => {
+        fn(...args);
+        setTimer(null);
+      }, delay)
+    );
   };
 
   return debouncedFn;
