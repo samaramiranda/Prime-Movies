@@ -21,7 +21,6 @@ export const Informations = styled.div`
   top: 50%;
   transform: translateY(-50%);
   width: 37vw;
-  line-height: 1.25rem;
   color: ${({ theme }) => theme.colors.cultured};
 `;
 
@@ -41,11 +40,13 @@ export const Details = styled.div`
 export const Overview = styled.p`
   text-align: justify;
   font-size: 0.9rem;
+  line-height: 1.25rem;
 `;
 
 export const ExtraInformations = styled.div`
   margin-top: 1.25rem;
   font-size: 0.9rem;
+  line-height: 1.25rem;
 
   p:first-of-type {
     margin-bottom: 0.625rem;
