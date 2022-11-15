@@ -43,7 +43,7 @@ Nas funções utilitárias foram realizados testes unitários utilizando o frame
 
 
 ## :bulb: Telas
-![1](https://user-images.githubusercontent.com/23708544/202025696-c11e7ba8-f1a4-4fd2-8fa8-009d2008b261.png)
+![1](https://user-images.githubusercontent.com/23708544/202031920-ddea18a9-7f9f-42b5-b891-3c00acb2116c.gif)
 
 ![2](https://user-images.githubusercontent.com/23708544/202026538-a22214d3-8c8c-4a8a-97da-d92a875b5913.png)
 
