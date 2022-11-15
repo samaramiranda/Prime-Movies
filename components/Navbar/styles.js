@@ -44,6 +44,7 @@ export const IconTicket = styled(ImTicket)`
 export const SearchBar = styled.form`
   display: flex;
   align-items: center;
+  position: relative;
   width: 25vw;
   border: 0.125rem solid ${({ theme }) => theme.colors.ultramarineBlue};
   border-radius: 1.25rem;
@@ -89,4 +90,12 @@ export const SearchBar = styled.form`
 export const IconSearch = styled(ImSearch)`
   font-size: 1.125rem;
   color: ${({ theme }) => theme.colors.ultramarineBlue};
+`;
+
+export const ErrorDebounce = styled.div`
+  position: absolute;
+  bottom: -2.1875rem;
+  padding: 0 0.3125rem;
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.goldenrod};
 `;

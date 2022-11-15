@@ -6,7 +6,14 @@ import Link from 'next/link';
 import useQueryParams from '../../hooks/useQueryParams';
 import debounce from '../../utils/debounce';
 
-import { Container, Logo, IconTicket, SearchBar, IconSearch } from './styles';
+import {
+  Container,
+  Logo,
+  IconTicket,
+  SearchBar,
+  IconSearch,
+  ErrorDebounce,
+} from './styles';
 
 export default function Navbar() {
   const search = useRef(null);
@@ -29,7 +36,6 @@ export default function Navbar() {
       return;
     }
     if (debounceRunning) {
-      console.log('AGUARDA');
       return;
     }
 
@@ -60,6 +66,15 @@ export default function Navbar() {
         <button type="submit">
           <IconSearch />
         </button>
+
+        {debounceRunning && (
+          <ErrorDebounce>
+            <p>
+              Limite de requisições a API atingido. Tente novamente em alguns
+              segundos!
+            </p>
+          </ErrorDebounce>
+        )}
       </SearchBar>
     </Container>
   );
