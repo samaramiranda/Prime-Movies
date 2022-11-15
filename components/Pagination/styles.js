@@ -11,8 +11,8 @@ export const Container = styled(ReactPaginate)`
   .break,
   .previous,
   .next {
-    margin: 0 1.2px;
-    border-radius: 9px;
+    margin: 0 0.075rem;
+    border-radius: 0.5625rem;
     color: ${({ theme }) => theme.colors.cultured};
     background-color: ${({ theme }) => theme.colors.ultramarineBlue};
     cursor: pointer;
@@ -26,9 +26,9 @@ export const Container = styled(ReactPaginate)`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
-    min-width: 30px;
-    padding: 0 5px;
+    height: 1.875rem;
+    min-width: 1.875rem;
+    padding: 0 0.3125rem;
   }
 
   .active {
