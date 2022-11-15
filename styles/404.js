@@ -24,7 +24,7 @@ export const Informations = styled.div`
     font-size: 1rem;
     font-weight: bold;
     color: ${({ theme }) => theme.colors.cultured};
-    background-color: ${({ theme }) => theme.colors.ultramarineBlue};
+    background-color: ${({ theme }) => theme.colors.flame};
     cursor: pointer;
 
     &:hover {

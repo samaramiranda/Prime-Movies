@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: none;
   padding: 0.5rem;
   border-radius: 0 0 1.25rem 1.25rem;
-  background-color: ${({ theme }) => theme.colors.yankeesBlue};
+  background-color: ${({ theme }) => theme.colors.darkCharcoal};
 `;
 
 export const Overview = styled.p`

@@ -10,8 +10,8 @@ export const Title = styled.h1`
   color: transparent;
   background-image: linear-gradient(
     180deg,
-    ${({ theme }) => theme.colors.ultramarineBlue},
-    ${({ theme }) => theme.colors.jordyBlue}
+    ${({ theme }) => theme.colors.flame},
+    ${({ theme }) => theme.colors.yellowOrange}
   );
   -webkit-background-clip: text;
   background-clip: text;

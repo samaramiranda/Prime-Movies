@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 1.5625rem;
   padding: 2rem 5rem;
-  background-color: ${({ theme }) => theme.colors.richBlackOpacity99};
+  background-color: ${({ theme }) => theme.colors.chineseBlack99};
 
   div {
     display: flex;
@@ -23,7 +23,7 @@ export const Line = styled.hr`
   flex: 1;
   height: 0.0313rem;
   border: none;
-  background-color: ${({ theme }) => theme.colors.ultramarineBlueOpacity70};
+  background-color: ${({ theme }) => theme.colors.flameOpacity70};
 `;
 
 export const IconSocialNetwork = styled(FaGithub, FaLinkedin)`

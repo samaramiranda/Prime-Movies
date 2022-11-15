@@ -1,20 +1,22 @@
 const theme = {
   colors: {
-    richBlack: '#060b28',
-    richBlackOpacity99: '#060b2899',
+    chineseBlack: '#151515',
+    chineseBlackOpacity99: '#15151599',
 
-    yankeesBlue: '#1e233d',
+    darkCharcoal: '#333333',
 
-    ultramarineBlue: '#2f5aff',
-    ultramarineBlueOpacity70: '#2f5aff70',
-    ultramarineBlueOpacity25: '#2f5aff25',
-    jordyBlue: '#89bdff',
+    charlestonGreen: '#2a2a2a',
+
+    flame: '#e24a19',
+    flameOpacity70: '#e24a1970',
+    flameOpacity25: '#e24a1925',
+
+    goldenrod: '#d7a01d',
+    yellowOrange: '#ffb340',
 
     whiteOpacity80: '#ffffff80',
 
     cultured: '#f5f5f5',
-
-    goldenrod: '#d7a01d',
   },
 };
 

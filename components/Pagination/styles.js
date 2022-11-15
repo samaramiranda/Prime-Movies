@@ -14,7 +14,7 @@ export const Container = styled(ReactPaginate)`
     margin: 0 0.075rem;
     border-radius: 0.5625rem;
     color: ${({ theme }) => theme.colors.cultured};
-    background-color: ${({ theme }) => theme.colors.ultramarineBlue};
+    background-color: ${({ theme }) => theme.colors.flame};
     cursor: pointer;
     transition: 0.3s;
   }
@@ -32,7 +32,7 @@ export const Container = styled(ReactPaginate)`
   }
 
   .active {
-    background-color: ${({ theme }) => theme.colors.ultramarineBlueOpacity70};
+    background-color: ${({ theme }) => theme.colors.flameOpacity70};
   }
 
   .page:not(.page.active):hover,

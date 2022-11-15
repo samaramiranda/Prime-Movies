@@ -11,21 +11,21 @@ export default createGlobalStyle`
   body {
     min-height: 100vh;
     background: linear-gradient(
-      ${({ theme }) => theme.colors.richBlack} 50%,
-      ${({ theme }) => theme.colors.ultramarineBlueOpacity25}
+      ${({ theme }) => theme.colors.chineseBlack} 50%,
+      ${({ theme }) => theme.colors.charlestonGreen}
     );
-    background-color: ${({ theme }) => theme.colors.richBlack};
+    background-color: ${({ theme }) => theme.colors.chineseBlack};
 
     &::-webkit-scrollbar {
       width: 1rem;               
     }
     &::-webkit-scrollbar-track {
-      background: ${({ theme }) => theme.colors.richBlack}   
+      background: ${({ theme }) => theme.colors.chineseBlack}   
     }
     &::-webkit-scrollbar-thumb {
-      background-color: ${({ theme }) => theme.colors.ultramarineBlue};
+      background-color: ${({ theme }) => theme.colors.flame};
       border-radius: .5rem;       
-      border: 0.25rem solid ${({ theme }) => theme.colors.richBlack}
+      border: 0.25rem solid ${({ theme }) => theme.colors.chineseBlack}
     }
   }
 

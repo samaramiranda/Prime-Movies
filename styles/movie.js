@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   height: calc(100vh - 5.6rem);
-  background-color: ${({ theme }) => theme.colors.richBlack};
+  background-color: ${({ theme }) => theme.colors.chineseBlack};
 `;
 
 export const WrapperInformations = styled.div`
@@ -59,5 +59,5 @@ export const Backdrop = styled.div`
   background-position: center left;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 40vh 0 20vh -6.25rem ${({ theme }) => theme.colors.richBlack};
+  box-shadow: inset 40vh 0 20vh -6.25rem ${({ theme }) => theme.colors.chineseBlack};
 `;

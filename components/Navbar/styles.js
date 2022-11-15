@@ -20,8 +20,8 @@ export const Logo = styled.div`
     color: transparent;
     background-image: linear-gradient(
       90deg,
-      ${({ theme }) => theme.colors.ultramarineBlue},
-      ${({ theme }) => theme.colors.jordyBlue}
+      ${({ theme }) => theme.colors.flame},
+      ${({ theme }) => theme.colors.yellowOrange}
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -38,7 +38,7 @@ export const Logo = styled.div`
 
 export const IconTicket = styled(ImTicket)`
   font-size: 2.25rem;
-  color: ${({ theme }) => theme.colors.ultramarineBlue};
+  color: ${({ theme }) => theme.colors.flame};
 `;
 
 export const SearchBar = styled.form`
@@ -46,7 +46,7 @@ export const SearchBar = styled.form`
   align-items: center;
   position: relative;
   width: 25vw;
-  border: 0.125rem solid ${({ theme }) => theme.colors.ultramarineBlue};
+  border: 0.125rem solid ${({ theme }) => theme.colors.flame};
   border-radius: 1.25rem;
   transition: 0.3s;
 
@@ -82,14 +82,13 @@ export const SearchBar = styled.form`
   }
 
   &:hover {
-    box-shadow: 0 0 0 0.1875rem
-      ${({ theme }) => theme.colors.ultramarineBlueOpacity70};
+    box-shadow: 0 0 0 0.1875rem ${({ theme }) => theme.colors.flameOpacity70};
   }
 `;
 
 export const IconSearch = styled(ImSearch)`
   font-size: 1.125rem;
-  color: ${({ theme }) => theme.colors.ultramarineBlue};
+  color: ${({ theme }) => theme.colors.flame};
 `;
 
 export const ErrorDebounce = styled.div`
@@ -99,5 +98,5 @@ export const ErrorDebounce = styled.div`
   border-radius: 0.3125rem;
   font-size: 0.75rem;
   color: ${({ theme }) => theme.colors.goldenrod};
-  background-color: ${({ theme }) => theme.colors.richBlack};
+  background-color: ${({ theme }) => theme.colors.chineseBlack};
 `;
