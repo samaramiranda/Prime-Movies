@@ -15,6 +15,18 @@ export default createGlobalStyle`
       ${({ theme }) => theme.colors.ultramarineBlueOpacity25}
     );
     background-color: ${({ theme }) => theme.colors.richBlack};
+
+    &::-webkit-scrollbar {
+      width: 1rem;               
+    }
+    &::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors.richBlack}   
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.ultramarineBlue};
+      border-radius: .5rem;       
+      border: 0.25rem solid ${({ theme }) => theme.colors.richBlack}
+    }
   }
 
   a {
