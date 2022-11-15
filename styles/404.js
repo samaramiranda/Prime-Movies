@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 4vw;
-  margin-top: 16.5vh;
+  height: calc(100vh - 5.6rem);
 `;
 
 export const Informations = styled.div`

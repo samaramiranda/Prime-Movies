@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 1rem 5rem 1.5rem;
+  min-height: calc(100vh - 5.6rem);
 `;
 
 export const Title = styled.h1`
