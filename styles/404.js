@@ -12,16 +12,16 @@ export const Informations = styled.div`
   flex: 0.4;
 
   p {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: bold;
     color: ${({ theme }) => theme.colors.cultured};
   }
 
   button {
-    margin-top: 40px;
-    padding: 11px 20px;
-    border-radius: 20px;
-    font-size: 16px;
+    margin-top: 2.5rem;
+    padding: 0.6875rem 1.25rem;
+    border-radius: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     color: ${({ theme }) => theme.colors.cultured};
     background-color: ${({ theme }) => theme.colors.ultramarineBlue};
