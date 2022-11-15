@@ -5,7 +5,7 @@ import imgSadness from '../public/images/error_404_mike.png';
 
 import { Container, Informations } from '../styles/404';
 
-function Custom404() {
+export default function Custom404() {
   return (
     <Container>
       <Image src={imgSadness} alt="Não encontrado" width={343} height={400} />
@@ -20,5 +20,3 @@ function Custom404() {
     </Container>
   );
 }
-
-export default Custom404;

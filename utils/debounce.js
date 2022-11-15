@@ -1,4 +1,4 @@
-const debounce = (fn, delay, setDebounceRunning) => {
+export default function debounce(fn, delay, setDebounceRunning) {
   let timer = null;
   setDebounceRunning(true);
 
@@ -14,5 +14,4 @@ const debounce = (fn, delay, setDebounceRunning) => {
   };
 
   return debouncedFn;
-};
-export default debounce;
+}

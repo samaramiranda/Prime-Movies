@@ -6,7 +6,7 @@ const api = axios.create({
   baseURL: apiPath,
 });
 
-const getMovieData = async url => {
+export default async function getMovieData(url) {
   let data = {};
 
   try {
@@ -17,6 +17,4 @@ const getMovieData = async url => {
   }
 
   return data;
-};
-
-export default getMovieData;
+}
