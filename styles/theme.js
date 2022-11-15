@@ -3,6 +3,8 @@ const theme = {
     richBlack: '#060b28',
     richBlackOpacity99: '#060b2899',
 
+    yankeesBlue: '#1e233d',
+
     ultramarineBlue: '#2f5aff',
     ultramarineBlueOpacity70: '#2f5aff70',
     ultramarineBlueOpacity25: '#2f5aff25',
