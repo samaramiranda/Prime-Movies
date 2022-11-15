@@ -1,13 +1,11 @@
-import Image from 'next/image';
-
 import getMovieData from '../services/getMovieData';
 import useQueryParams from '../hooks/useQueryParams';
-import imgSadness from '../public/images/not_found_sadness.png';
 
 import MovieCard from '../components/MovieCard';
 import Pagination from '../components/Pagination';
+import SearchNotFound from '../components/SearchNotFound';
 
-import { Container, Title, MovieList, NotFound } from '../styles/home';
+import { Container, Title, MovieList } from '../styles/home';
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 const apiLanguage = process.env.NEXT_PUBLIC_API_LANGUAGE;
@@ -32,16 +30,7 @@ export default function Home({ topMoviesData, page }) {
           ))}
         </MovieList>
       ) : (
-        <NotFound>
-          <Image
-            src={imgSadness}
-            alt="Não encontrado"
-            width={224}
-            height={320}
-          />
-
-          <p>Nenhum resultado encontrado!</p>
-        </NotFound>
+        <SearchNotFound />
       )}
 
       <Pagination totalPages={numberOfPages} initialPage={page} />
